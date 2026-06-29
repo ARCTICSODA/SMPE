@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Advanced Dental Digitization: Incorporating Shape Priors and
+    Multiview Coherence in Diffusion Models for Tooth Model Design">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMPE: Spherical Harmonics Labeling and Asymmetric Multi-View Expert for Consistent Part-Level 3D Editing</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+</head>
+
+<body>
+
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SMPE: Spherical Harmonics Labeling and Asymmetric Multi-View Expert for Consistent Part-Level 3D Editing</h1>
+            <div class="is-size-5 publication-authors">
+<div class="author-block" style="display: inline-block; width: 20%; vertical-align: top; margin: 1.66%;">
+    <span class="author-name-block">Bo Wei</span><br>
+    <span class="author-school-block">Zhejiang Gongshang University</span>
+</div>
+
+<div class="author-block" style="display: inline-block; width: 20%; vertical-align: top; margin: 1.66%;">
+    <span class="author-name-block">He Huang</span><br>
+    <span class="author-school-block">Zhejiang Gongshang University</span>
+</div>
+
+<div class="author-block" style="display: inline-block; width: 20%; vertical-align: top; margin: 1.66%;">
+    <span class="author-name-block">Yan Tian</span><br>
+    <span class="author-school-block">Zhejiang Gongshang University</span>
+</div>
+
+<div class="author-block" style="display: inline-block; width: 20%; vertical-align: top; margin: 1.66%;">
+    <span class="author-name-block">Vladimir Golovko</span><br>
+    <span class="author-school-block">Brest State Technical University</span>
+</div>
+
+<div class="author-block" style="display: inline-block; width: 20%; vertical-align: top; margin: 1.66%;">
+    <span class="author-name-block">Aura Conci</span><br>
+    <span class="author-school-block">Universidade Federal Fluminense</span>
+</div>
+
+<div class="author-block" style="display: inline-block; width: 20%; vertical-align: top; margin: 1.66%;">
+    <span class="author-name-block">Abdulkadir Sengur</span><br>
+    <span class="author-school-block">Firat University</span>
+</div>
+
+<div class="author-block" style="display: inline-block; width: 20%; vertical-align: top; margin: 1.66%;">
+    <span class="author-name-block">Mahmoud Hassaballah</span><br>
+    <span class="author-school-block">Prince Sattam Bin Abdulaziz University</span>
+</div>
+
+<div class="author-block" style="display: inline-block; width: 20%; vertical-align: top; margin: 1.66%;">
+    <span class="author-name-block">Karen Egiazarian</span><br>
+    <span class="author-school-block">Tampere University</span>
+</div>
+
+            <div class="is-size-5 publication-authors">
+              <!-- <span class="author-block">University of Washington,</span> -->
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/abstract.png" alt="Abstract">
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/big_framework2.jpg" alt="SMPE overall pipeline">
+          <p class="caption">
+            <b>Figure: Overall pipeline of SMPE.</b> Given a 3DGS scene and text prompt, 
+            Spherical Harmonics Labeling (SHSeg) performs local 3D segmentation to generate 
+            a 3D mask. The AMED module fine-tunes the multi-view attention layers of the 
+            diffusion U-Net for asymmetric cross-view feature alignment. Finally, the 3DGS 
+            scene is optimized within the masked region via multi-view diffusion sampling 
+            for consistent part-level editing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Example -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Example</h2>
+
+        <!-- Face editing results -->
+        <div class="content has-text-justified">
+          <img src="./static/images/compare_face.jpg" alt="Face editing comparison">
+          <p class="caption">
+            <b>Figure: Comparison on face editing.</b> Given prompts such as "Give him a 
+            cowboy hat", I-N2N fails to produce sensible results, GSEditor propagates 
+            edits to irrelevant areas, while SMPE achieves precise, focused editing 
+            confined to the target region.
+          </p>
+        </div>
+
+        <!-- Object editing results -->
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <img src="./static/images/compare_obj.jpg" alt="Object editing comparison">
+          <p class="caption">
+            <b>Figure: Comparison on object editing.</b> Under prompts including 
+            "Turn the ribbon into red", "Turn it into a bread", "Put boots on its feet", 
+            and "Remove the cookies and put a cake on the plate", SMPE consistently 
+            outperforms I-N2N and GSEditor by accurately constraining edits to target 
+            objects while preserving background and multi-view consistency.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+      <!--/ Example. -->
+    </div>
+  </section>
+
+
+</body>
+
+</html>
+
